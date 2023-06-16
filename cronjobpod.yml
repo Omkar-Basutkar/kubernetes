@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+    name: cronjobwala
+spec:
+  schedule: "1,15,30,45 * * * *"  
+  jobTemplate:
+     spec:
+        template:
+          metadata:
+                 labels:
+                    app: testing
+          spec:
+            restartPolicy: OnFailure
+            containers:
+                     - name: main
+                       image: luksa/batch-job

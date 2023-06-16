@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingresswala
+spec:
+  rules:
+   - host: tujanena.com
+     http:
+      paths:
+       - path: /
+         pathType: Prefix
+         backend:
+            service:
+              name: myservice
+              port:
+               number: 80
+

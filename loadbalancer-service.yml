@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+   name: lbwalaservice
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 80
+  selector:
+      app: dev
+
+## have to configure cloud provider loadbalacer and attach ##
