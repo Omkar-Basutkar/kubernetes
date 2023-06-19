@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+   name: statefulwala
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: dev
+  template:
+    metadata:
+      labels:
+        app: dev
+    spec:
+      containers:
+         - image: mysql
+           name: mysqlcontainer
+           ports:
+            - containerPort: 3306
+           env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: mysqlsecret
+                    key: MYSQL_ROOT_PASSWORD
