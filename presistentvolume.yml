@@ -11,6 +11,6 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: fs-0033971b7835763f8.efs.ap-south-1.amazonaws.com
+    server: {give nfs dns}
     path: /test
 

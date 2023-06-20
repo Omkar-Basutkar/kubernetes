@@ -1,0 +1,67 @@
+kubectl get pods #To see all pods
+
+kubectl run mynginx --image=nginx #To create nginx image
+
+kubectl get pods -o wide #To see detailed information of pods
+
+kubectl apply -f {manifest-file-name} #to apply manifiest file
+
+kubectl exec -it {pod name} bash #to open bash terminal of pod
+
+kubectl delete pod {pod name} #to delete pod 
+
+kubectl delete all --all # deletes all eg. pods,services,namesapces ect.
+
+kubectl get nodes #to see all nodes
+
+kubectl describe pod myngpod #to see described information of pod
+
+kubectl delete -f {file name} #deletes pods, etc created through file.
+
+kubectl get pods --show-labels #shows pods with all lables
+
+kubectl create namespace {namespace name} #to create namespace
+
+kubectl get ns #to see namespaces
+
+kubectl get pods -n {namespace name} #to see pods in namespace
+
+kubectl delete ns {namespace name} #to delete namespace
+
+kubectl config set-context --current --namespace={namespace name} #to set defualt namespace
+
+kubectl logs {pod name} #to see logs of pod
+
+kubectl get rc #to see replicacontroller pods
+
+kubectl get {pod type} --watch #to watch pods processing
+
+kubectl scale rc {filename}} --replicas=10 #to increase replicas
+
+kubectl delete rc {filename} #to delete replica created with file
+
+kubectl get service #to see services
+
+kubectl get replicaset #to see replicaset pods
+
+kubectl scale rs {pods name} --replicas=7 #to increase pods scale
+
+kubectl delete rs {pod name} #to delete replicaset pod
+
+kubectl get job #to see job pod
+
+kubectl get ingress #to see ingress pods
+
+kubectl get pv #to see presistent volume pods
+
+kubectl get deployments # see deployment pods
+
+kubectl set image deployment {pod name} ngcontainer=updatedednew #deployment image update
+
+kubectl scale deployment {pod name}  --replicas=4 #scale deployment pods
+
+kubectl rollout status deployment {pods name} #see rollout status
+
+kubectl rollout undo deployment {pods name} #get back to old image
+
+kubectl rollout pause deployment replicawala #pause rollout
